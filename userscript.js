@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dictionary audio link revealer
 // @namespace    solomonhuang-dalr
-// @version      0.0.1-20191018
+// @version      0.0.1-20191019
 // @description  try to take over the world!
 // @author       Solomon Huang
 // @match        https://dictionary.cambridge.org/dictionary/*
