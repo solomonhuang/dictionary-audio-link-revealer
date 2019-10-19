@@ -15,7 +15,7 @@
     // Your code here...
     $('audio source[type="audio/mpeg"]').each(function(index) {
         var src = $( this ).attr('src')
-        $(this).parent().parent().parent().append('<a href="' + src + '">&#x1f517;</a>')
+        $(this).parent().parent().siblings().append('<a style="text-decoration:none" href="' + src + '">&#x1f517;</a>')
         //console.log( index + ": " + src)
     })
 })();
