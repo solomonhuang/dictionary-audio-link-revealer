@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dictionary audio link revealer
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.0.2-20191028
+// @version      0.0.3-20191028
 // @description  Add audio file link of dictionary pages
 // @author       Solomon Huang
 // @match        https://dictionary.cambridge.org/dictionary/*
@@ -21,7 +21,7 @@
         var link = document.createElement('a')
         link.href = src
         link.style = 'text-decoration:none'
-        link.appendChild(document.createTextNode('&#x1F517;'))
+        link.appendChild(document.createTextNode('MP3'))
         daud[i].children[1].append(link)
     }
 
