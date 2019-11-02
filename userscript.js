@@ -9,6 +9,7 @@
 // @license      MIT
 // @match        https://dictionary.cambridge.org/dictionary/*
 // @match        https://tw.dictionary.search.yahoo.com/*
+// @match        https://www.oxfordlearnersdictionaries.com/definition/*
 // @grant        none
 // @supportURL   https://github.com/solomonhuang/dictionary-audio-link-revealer/issues
 // ==/UserScript==
@@ -66,6 +67,14 @@
                 dict_sound[i].parentElement.append(createLink(src))
             }
         },1000)
+    }
+
+    if (/www\.oxfordlearnersdictionaries\.com/.test(currentDict)) {
+        let icon_audio = document.querySelectorAll('.icon-audio')
+        for (let i = 0; i < icon_audio.length; i++) {
+            let src = icon_audio[i].attributes["data-src-mp3"].value
+            icon_audio[i].parentElement.append(createLink(src))
+        }
     }
 
 })();
