@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dictionary audio link revealer
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.0.4-20191102
+// @version      0.0.0-devel
 // @description  Add audio file link of dictionary pages
 // @author       Solomon Huang
 // @match        https://dictionary.cambridge.org/dictionary/*
