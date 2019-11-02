@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         Dictionary audio link revealer
+// @name:zh-TW   網路字典發音下載
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.0.0-devel
+// @version      0.1.0
 // @description  Add audio file link of dictionary pages
+// @description:zh-TW 在網路字典的發音按鈕旁邊新增聲音檔下載。
 // @author       Solomon Huang
+// @license      MIT
 // @match        https://dictionary.cambridge.org/dictionary/*
 // @match        https://tw.dictionary.search.yahoo.com/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/solomonhuang/dictionary-audio-link-revealer/master/userscript.js
-// @downloadURL  https://raw.githubusercontent.com/solomonhuang/dictionary-audio-link-revealer/master/userscript.js
+// @supportURL   https://github.com/solomonhuang/dictionary-audio-link-revealer/issues
 // ==/UserScript==
 
 (function() {
