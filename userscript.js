@@ -19,7 +19,7 @@
 
     var currentDict = location.hostname
 
-    function createICON() {
+    function createICON(fontSZ) {
         let icon = document.createElementNS('http://www.w3.org/2000/svg','svg')
         // SVG icon alighment style
         // Elliot Dahl ( https://twitter.com/Elliotdahl )
@@ -40,8 +40,12 @@
         let link = document.createElement('a')
         link.href = src
         link.style = 'text-decoration:none'
-        link.appendChild(createICON())
         return link
+    }
+
+    function appendICON(el, src) {
+        let fontSZ = parseFloat(getComputedStyle(el).fontSize)
+        el.append(createLink(src).appendChild(createICON(fontSZ)))
     }
 
     if (/dictionary\.cambridge\.org/.test(currentDict)) {
@@ -49,11 +53,7 @@
         for (var i = 0; i < daud.length; i++) {
             let a = daud[i].getElementsByTagName('audio')
             let src = a[0].children[0].src
-            let link = document.createElement('a')
-            link.href = src
-            link.style = 'text-decoration:none'
-            link.appendChild(createICON())
-            daud[i].children[1].append(link)
+            appendICON(daud[i].children[1], src)
         }
     }
 
@@ -64,7 +64,7 @@
         setTimeout(() => {
             for (let i = 0; i < dict_sound.length; i++) {
                 let src = dict_sound[i].children[0].src
-                dict_sound[i].parentElement.append(createLink(src))
+                appendICON(dict_sound[i].parentElement, src)
             }
         },1000)
     }
@@ -73,7 +73,7 @@
         let icon_audio = document.querySelectorAll('.icon-audio')
         for (let i = 0; i < icon_audio.length; i++) {
             let src = icon_audio[i].attributes["data-src-mp3"].value
-            icon_audio[i].parentElement.append(createLink(src))
+            appendICON(icon_audio[i].parentElement, src)
         }
     }
 
