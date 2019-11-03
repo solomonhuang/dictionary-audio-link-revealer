@@ -2,7 +2,7 @@
 // @name         Dictionary audio link revealer
 // @name:zh-TW   網路字典發音下載
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.1.0
+// @version      0.1.1
 // @description  Add audio file link of dictionary pages
 // @description:zh-TW 在網路字典的發音按鈕旁邊新增聲音檔下載。
 // @author       Solomon Huang
