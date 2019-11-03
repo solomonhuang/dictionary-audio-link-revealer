@@ -10,6 +10,7 @@
 // @match        https://dictionary.cambridge.org/dictionary/*
 // @match        https://tw.dictionary.search.yahoo.com/*
 // @match        https://www.oxfordlearnersdictionaries.com/definition/*
+// @match        https://www.dictionary.com/browse/*
 // @grant        none
 // @supportURL   https://github.com/solomonhuang/dictionary-audio-link-revealer/issues
 // ==/UserScript==
@@ -45,7 +46,9 @@
 
     function appendICON(el, src) {
         let fontSZ = parseFloat(getComputedStyle(el).fontSize)
-        el.append(createLink(src).appendChild(createICON(fontSZ)))
+        let link = createLink(src)
+        link.appendChild(createICON(fontSZ))
+        el.append(link)
     }
 
     if (/dictionary\.cambridge\.org/.test(currentDict)) {
@@ -74,6 +77,14 @@
         for (let i = 0; i < icon_audio.length; i++) {
             let src = icon_audio[i].attributes["data-src-mp3"].value
             appendICON(icon_audio[i].parentElement, src)
+        }
+    }
+
+    if (/www\.dictionary\.com/.test(currentDict)) {
+        let audio_wrapper = document.querySelectorAll('.audio-wrapper')
+        for (let i = 0; i < audio_wrapper.length; i++) {
+            let src = audio_wrapper[i].children[1].children[1].src
+            appendICON(audio_wrapper[i], src)
         }
     }
 
