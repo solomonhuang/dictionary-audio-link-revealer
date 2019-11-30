@@ -2,12 +2,12 @@
 // @name         Dictionary audio link revealer
 // @name:zh-TW   網路字典發音下載
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.1.1
+// @version      0.1.2
 // @description  Add audio file link of dictionary pages
 // @description:zh-TW 在網路字典的發音按鈕旁邊新增聲音檔下載。
 // @author       Solomon Huang
 // @license      MIT
-// @match        https://dictionary.cambridge.org/dictionary/*
+// @match        https://dictionary.cambridge.org/*
 // @match        https://tw.dictionary.search.yahoo.com/*
 // @match        https://www.oxfordlearnersdictionaries.com/definition/*
 // @match        https://www.dictionary.com/browse/*
