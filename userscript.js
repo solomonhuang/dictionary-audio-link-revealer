@@ -2,7 +2,7 @@
 // @name         Dictionary audio link revealer
 // @name:zh-TW   網路字典發音下載
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.1.2
+// @version      0.20211203.0
 // @description  Add audio file link of dictionary pages
 // @description:zh-TW 在網路字典的發音按鈕旁邊新增聲音檔下載。
 // @author       Solomon Huang
@@ -51,6 +51,9 @@
         el.append(link)
     }
 
+    setTimeout(() => {
+    /* all dictionary sites begin here */
+
     if (/dictionary\.cambridge\.org/.test(currentDict)) {
         let daud = document.querySelectorAll('.daud')
         for (var i = 0; i < daud.length; i++) {
@@ -64,12 +67,10 @@
         let dict_sound = document.querySelectorAll('.dict-sound')
         // TODO: fix with MutationObserver
         // https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
-        setTimeout(() => {
-            for (let i = 0; i < dict_sound.length; i++) {
-                let src = dict_sound[i].children[0].src
-                appendICON(dict_sound[i].parentElement, src)
-            }
-        },1000)
+        for (let i = 0; i < dict_sound.length; i++) {
+            let src = dict_sound[i].children[0].src
+            appendICON(dict_sound[i].parentElement, src)
+        }
     }
 
     if (/www\.oxfordlearnersdictionaries\.com/.test(currentDict)) {
@@ -88,5 +89,7 @@
         }
     }
 
+    /* all dictionary sites end here */
+    }, 500)
 })();
 
