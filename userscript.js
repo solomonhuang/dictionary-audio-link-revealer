@@ -2,7 +2,7 @@
 // @name         Dictionary audio link revealer
 // @name:zh-TW   網路字典發音下載
 // @namespace    https://github.com/solomonhuang/dictionary-audio-link-revealer
-// @version      0.20211203.0
+// @version      0.20220112.0
 // @description  Add audio file link of dictionary pages
 // @description:zh-TW 在網路字典的發音按鈕旁邊新增聲音檔下載。
 // @author       Solomon Huang
@@ -26,14 +26,33 @@
         // Elliot Dahl ( https://twitter.com/Elliotdahl )
         // https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
         icon.setAttribute('style','height:1em;width:1em;top: .125em;position: relative;display: inline-flex;align-self: center;')
-        let c = document.createElementNS('http://www.w3.org/2000/svg','circle')
-        c.setAttribute('cx', '50%')
-        c.setAttribute('cy', '50%')
-        c.setAttribute('r', '40%')
-        c.setAttribute('stroke', 'green')
-        c.setAttribute('storke-width', '10%')
-        c.setAttribute('fill', 'yellow')
-        icon.appendChild(c)
+        icon.setAttribute('width', '24')
+        icon.setAttribute('height', '24')
+        icon.setAttribute('stroke-width', '1.5')
+        icon.setAttribute('stroke-width', '1.5')
+        icon.setAttribute('viewBox', '0 0 24 24')
+        icon.setAttribute('fill', 'none')
+
+        let p3 = document.createElementNS('http://www.w3.org/2000/svg','path')
+        p3.setAttribute('d', 'M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z')
+        p3.setAttribute('stroke', 'green')
+        p3.setAttribute('stroke-linecap', 'round')
+        p3.setAttribute('stroke-linejoin', 'round')
+        p3.setAttribute('fill', 'yellow')
+        icon.appendChild(p3)
+        let p1 = document.createElementNS('http://www.w3.org/2000/svg','path')
+        p1.setAttribute('d', 'M9 17L15 17')
+        p1.setAttribute('stroke', 'green')
+        p1.setAttribute('stroke-linecap', 'round')
+        p1.setAttribute('stroke-linejoin', 'round')
+        icon.appendChild(p1)
+        let p2 = document.createElementNS('http://www.w3.org/2000/svg','path')
+        p2.setAttribute('d', 'M12 6V13M12 13L15.5 9.5M12 13L8.5 9.5')
+        p2.setAttribute('stroke', 'green')
+        p2.setAttribute('stroke-linecap', 'round')
+        p2.setAttribute('stroke-linejoin', 'round')
+        icon.appendChild(p2)
+
         return icon
     }
 
